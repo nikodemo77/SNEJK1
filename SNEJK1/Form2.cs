@@ -88,6 +88,7 @@ namespace SNEJK1
                 MessageBox.Show("Przegrałeś");
                 MessageBox.Show("Przegrałeś");
                 MessageBox.Show("Przegrałeś");
+                MessageBox.Show("Wygrałeś!");
             }
 
         }
