@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
@@ -41,9 +42,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Name = "Form2";
             Text = "Form2";
+            Load += Form2_Load;
             KeyDown += Form2_KeyDown;
             ResumeLayout(false);
         }

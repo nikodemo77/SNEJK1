@@ -22,7 +22,7 @@ namespace SNEJK1
 
         Random random = new Random();
         List<PictureBox> snake = new List<PictureBox>();
-    
+
 
         public Form2()
         {
@@ -63,57 +63,56 @@ namespace SNEJK1
                 }
             }
 
-                if (direction == "right")
-                {
-                    head.Left += speed;
-                }
-
-                if (direction == "left")
-                {
-                    head.Left -= speed;
-                }
-
-                if (direction == "up")
-                {
-                    head.Top -= speed;
-                }
-
-                if (direction == "down")
-                {
-                    head.Top += speed;
-                }
-
-                if (head.Bounds.IntersectsWith(food.Bounds))
-                {
-                    food.Left = random.Next(0, 700);
-                    food.Top = random.Next(0, 400);
-
-                    PictureBox body = new PictureBox();
-                    
-                    body.BackColor = Color.Green;
-
-                    body.Width = 20;
-                    body.Height = 20;
-                    
-                    this.Controls.Add(body);
-
-                    snake.Add(body);
-                }
-
-                if (head.Left < 0 ||
-                    head.Top < 0 ||
-                    head.Right > this.ClientSize.Width ||
-                    head.Bottom > this.ClientSize.Height)
-                {
-                    timer1.Stop();
-
-                    MessageBox.Show("Przegrałeś");
-                    MessageBox.Show("Przegrałeś");
-                    MessageBox.Show("Przegrałeś");
-                    MessageBox.Show("Wygrałeś!");
-                }
-
+            if (direction == "right")
+            {
+                head.Left += speed;
             }
+
+            if (direction == "left")
+            {
+                head.Left -= speed;
+            }
+
+            if (direction == "up")
+            {
+                head.Top -= speed;
+            }
+
+            if (direction == "down")
+            {
+                head.Top += speed;
+            }
+
+            if (head.Bounds.IntersectsWith(food.Bounds))
+            {
+                food.Left = random.Next(0, 700);
+                food.Top = random.Next(0, 400);
+
+                PictureBox body = new PictureBox();
+
+                body.BackColor = Color.Green;
+
+                body.Width = 20;
+                body.Height = 20;
+
+                this.Controls.Add(body);
+
+                snake.Add(body);
+            }
+
+            if (head.Left < 0 ||
+                head.Top < 0 ||
+                head.Right > this.ClientSize.Width ||
+                head.Bottom > this.ClientSize.Height)
+            {
+                timer1.Stop();
+
+                MessageBox.Show("Przegrałeś");
+                
+                
+            }
+
+        }
 
         private void Form2_KeyDown(object sender, KeyEventArgs e)
         {
@@ -136,6 +135,11 @@ namespace SNEJK1
             {
                 direction = "down";
             }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
