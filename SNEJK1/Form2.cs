@@ -112,6 +112,18 @@ namespace SNEJK1
                 
             }
 
+            for (int i = 1; i < snake.Count; i++)
+            {
+                if (head.Bounds.IntersectsWith(snake[i].Bounds))
+                {
+                    timer1.Stop();
+
+                    MessageBox.Show("Przegrałeś");
+
+                    this.Close();
+                }
+            }
+
         }
 
         private void Form2_KeyDown(object sender, KeyEventArgs e)
