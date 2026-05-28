@@ -36,7 +36,7 @@
             // button1
             // 
             button1.Font = new Font("Showcard Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(289, 568);
+            button1.Location = new Point(289, 567);
             button1.Name = "button1";
             button1.Size = new Size(285, 77);
             button1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // button2
             // 
             button2.Font = new Font("Showcard Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(592, 568);
+            button2.Location = new Point(593, 567);
             button2.Name = "button2";
             button2.Size = new Size(284, 77);
             button2.TabIndex = 1;
@@ -66,6 +66,7 @@
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
