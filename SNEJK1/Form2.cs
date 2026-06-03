@@ -149,22 +149,22 @@ namespace SNEJK1
 
         private void Form2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D && direction != "left")
             {
                 direction = "right";
             }
 
-            if (e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A && direction != "right")
             {
                 direction = "left";
             }
 
-            if (e.KeyCode == Keys.W)
+            if (e.KeyCode == Keys.W && direction != "down")
             {
                 direction = "up";
             }
 
-            if (e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.S && direction != "up")
             {
                 direction = "down";
             }
