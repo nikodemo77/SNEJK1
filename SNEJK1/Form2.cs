@@ -23,6 +23,10 @@ namespace SNEJK1
         Random random = new Random();
         List<PictureBox> snake = new List<PictureBox>();
 
+        int score = 0;
+
+        int level = 1;
+
 
         public Form2()
         {
@@ -85,6 +89,20 @@ namespace SNEJK1
 
             if (head.Bounds.IntersectsWith(food.Bounds))
             {
+
+                score++;
+
+                labelScore.Text = "Punkty: " + score;
+
+                if(score % 5 == 0)
+                {
+                    level++;
+
+                    labelLevel.Text = "Level: " + level;
+
+                    timer1.Interval -= 10;
+                }
+
                 food.Left = random.Next(0, 700);
                 food.Top = random.Next(0, 400);
 
@@ -98,6 +116,7 @@ namespace SNEJK1
                 this.Controls.Add(body);
 
                 snake.Add(body);
+
             }
 
             if (head.Left < 0 ||
@@ -118,7 +137,9 @@ namespace SNEJK1
                 {
                     timer1.Stop();
 
-                    MessageBox.Show("Przegrałeś");
+                    MessageBox.Show(
+                        $"Przegrałeś!\n\nPunkty: {score} \nLevel: {level}"
+                        );
 
                     this.Close();
                 }

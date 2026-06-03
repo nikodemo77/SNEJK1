@@ -31,12 +31,34 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             timer1 = new System.Windows.Forms.Timer(components);
+            labelScore = new Label();
+            labelLevel = new Label();
             SuspendLayout();
             // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
+            // 
+            // labelScore
+            // 
+            labelScore.AutoSize = true;
+            labelScore.Font = new Font("Yu Gothic UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelScore.Location = new Point(720, 35);
+            labelScore.Name = "labelScore";
+            labelScore.Size = new Size(65, 17);
+            labelScore.TabIndex = 0;
+            labelScore.Text = "Punkty: 0";
+            // 
+            // labelLevel
+            // 
+            labelLevel.AutoSize = true;
+            labelLevel.Font = new Font("Yu Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelLevel.Location = new Point(720, 9);
+            labelLevel.Name = "labelLevel";
+            labelLevel.Size = new Size(66, 19);
+            labelLevel.TabIndex = 1;
+            labelLevel.Text = "Level: 1";
             // 
             // Form2
             // 
@@ -45,15 +67,20 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelLevel);
+            Controls.Add(labelScore);
             Name = "Form2";
             Text = "Form2";
             Load += Form2_Load;
             KeyDown += Form2_KeyDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Timer timer1;
+        private Label labelScore;
+        private Label labelLevel;
     }
 }
